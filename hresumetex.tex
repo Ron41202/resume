@@ -1,180 +1,173 @@
-% Options for packages loaded elsewhere
-\PassOptionsToPackage{unicode}{hyperref}
-\PassOptionsToPackage{hyphens}{url}
-%
-\documentclass[
-]{article}
-\usepackage{amsmath,amssymb}
-\usepackage{lmodern}
-\usepackage{iftex}
-\ifPDFTeX
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provide euro and other symbols
-\else % if luatex or xetex
-  \usepackage{unicode-math}
-  \defaultfontfeatures{Scale=MatchLowercase}
-  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\fi
-% Use upquote if available, for straight quotes in verbatim environments
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-\IfFileExists{microtype.sty}{% use microtype if available
-  \usepackage[]{microtype}
-  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
-}{}
-\makeatletter
-\@ifundefined{KOMAClassName}{% if non-KOMA class
-  \IfFileExists{parskip.sty}{%
-    \usepackage{parskip}
-  }{% else
-    \setlength{\parindent}{0pt}
-    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
-}{% if KOMA class
-  \KOMAoptions{parskip=half}}
-\makeatother
-\usepackage{xcolor}
-\usepackage{longtable,booktabs,array}
-\usepackage{calc} % for calculating minipage widths
-% Correct order of tables after \paragraph or \subparagraph
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
-\makeatother
-% Allow footnotes in longtable head/foot
-\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
-\makesavenoteenv{longtable}
-\setlength{\emergencystretch}{3em} % prevent overfull lines
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
-\hypersetup{
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
+%-------------------------
+% Resume in Latex - Rohan Singh Negi
+% Based off of: https://github.com/jakegut/resume
+%------------------------
 
-\author{}
-\date{}
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
-\begin{quote}
-\textbf{R o h a n S i n g h N e g i}
-\end{quote}
+%----------HEADING----------
+\begin{center}
+    {\Huge \scshape Rohan Singh Negi} \\ \vspace{1pt}
+    \small rohansinghnegi97@gmail.com $|$ 6399774044 $|$ Badowala, Dehradun \\
+    % Add your LinkedIn and GitHub links below if you have them
+    % \href{https://linkedin.com/in/yourprofile}{\underline{linkedin.com/in/yourprofile}} $|$
+    % \href{https://github.com/yourusername}{\underline{github.com/yourusername}}
+\end{center}
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
-\toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-\begin{quote}
-rohansinghnegi97@gmail.com
-\end{quote}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-6399774044
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Badowala, Dehradun
-\end{minipage} \\
-\midrule()
-\endhead
-\bottomrule()
-\end{longtable}
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Graphic Era Hill University}{Dehradun, India}
+      {Bachelor Of Technology, Computer Science Engineering}{Aug. 2020 -- Aug. 2024}
+      \resumeItemListStart
+        \resumeItem{CGPA: 7.87/10}
+      \resumeItemListEnd
 
-\begin{quote}
-\textbf{PROJECTS}
+    \resumeSubheading
+      {Kendriya Vidyalaya IMA, Dehradun}{Dehradun, India}
+      {Intermediate / 12th}{Mar. 2019 -- Mar. 2020}
+      \resumeItemListStart
+        \resumeItem{Percentage: 93\%}
+      \resumeItemListEnd
 
-August 2023 -- March 2024\\
-\textbf{Library Management System}
+    \resumeSubheading
+      {Kendriya Vidyalaya IMA, Dehradun}{Dehradun, India}
+      {High School / 10th}{Mar. 2017 -- Mar. 2018}
+      \resumeItemListStart
+        \resumeItem{Percentage: 88\%}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
 
-• Designed a relational database schema for managing book inventories,
-user accounts, and transaction records.
+%-----------PROJECTS-----------
+\section{Projects}
+  \resumeSubHeadingListStart
 
-• Implemented CRUD operations for efficient data management using SQL,
-enhancing user experience and system efficiency.
+    \resumeProjectHeading
+      {\textbf{LearnMate-agent} $|$ \emph{LangGraph, ReAct, Granite-3-3-8b, IBM watsonx Agent Lab}}{July 2025 -- Aug. 2025}
+      \resumeItemListStart
+        \resumeItem{Developed an intelligent agent to generate personalized course pathways using user interests, skill levels, and content preferences.}
+        \resumeItem{Implemented interest-based filtering, skill-level adaptation, and goal-driven planning for structured learning.}
+        \resumeItem{Leveraged LangGraph for dynamic workflows, ReAct for interactive decision-making, and integrated IBM watsonx Agent Lab for deployment.}
+      \resumeItemListEnd
 
-December 2022 -- June 2023\\
-\textbf{Blockchain Based E Voting System}
+    \resumeProjectHeading
+      {\textbf{Library Management System}}{Aug. 2023 -- Mar. 2024}
+      \resumeItemListStart
+        \resumeItem{Designed a relational database schema for managing book inventories, user accounts, and transaction records.}
+        \resumeItem{Implemented CRUD operations for efficient data management using SQL, enhancing user experience and system efficiency.}
+      \resumeItemListEnd
 
-• Designed and deployed a secure and transparent e-voting system on the
-Ethereum blockchain ensuring tamper proof voting and smart contracts.
+    \resumeProjectHeading
+      {\textbf{Blockchain Based E-Voting System}}{Dec. 2022 -- Jun. 2023}
+      \resumeItemListStart
+        \resumeItem{Designed and deployed a secure and transparent e-voting system on the Ethereum blockchain ensuring tamper proof voting and smart contracts.}
+        \resumeItem{Developed and tested smart contracts with Solidity in Remix IDE.}
+      \resumeItemListEnd
 
-• Created a secure e-voting system on Ethereum. Developed and tested
-smart contracts with Solidity in Remix IDE.
+  \resumeSubHeadingListEnd
 
-March 2022 -- August 2022\\
-\textbf{Real Time Chat Application}
-\end{quote}
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+  \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+      \textbf{Languages:} Python, C, C++, Solidity, JavaScript, SQL, HTML, CSS \\
+      \textbf{Frameworks/Tools:} LangGraph, ReAct, Granite-3-3-8b, IBM watsonx Agent Lab, Remix IDE \\
+      \textbf{Database:} SQL \\
+      \textbf{Other:} Cloud, Git, REST API
+    }}
+  \end{itemize}
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
-\toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-• •
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\begin{quote}
-Developed a Real Time Chat Application with instant messaging.
+%-----------SOFT SKILLS-----------
+\section{Soft Skills}
+  \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+      \textbf{Problem Solving}, \textbf{Critical Thinking}, \textbf{Teamwork}, \textbf{Adaptability}, \textbf{Effective Communication}, \textbf{Time Management}, \textbf{Self-learning}, \textbf{Attention to Detail}
+    }}
+  \end{itemize}
 
-Utilized WebSocket to enable real time communication and data transfer.
-\end{quote}
-\end{minipage} \\
-\midrule()
-\endhead
-\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{1.0000} + 2\tabcolsep}@{}}{%
-} \\
-\bottomrule()
-\end{longtable}
+%-----------CERTIFICATIONS-----------
+\section{Certifications}
+  \begin{itemize}[leftmargin=0.15in, label={}]
+    \item \textbf{Introduction to Cybersecurity} --- Cisco Networking Academy\\
+    Certificate: \href{https://github.com/Ron41202/certifications/blob/995d03deba715d88af29c97352229ceed320ee50/certificates/Introduction_to_Cybersecurity_certificate_rohannegi688-gmail-com_209484cb-60af-4207-b921-43918b5cc77e.pdf}{View PDF}
+    \item \textbf{Journey to Cloud: Envisioning Your Solution} --- IBM SkillsBuild\\
+    Certificate: \href{https://github.com/Ron41202/certifications/blob/995d03deba715d88af29c97352229ceed320ee50/certificates/IBMDesign20250803-31-hqkzt.pdf}{View PDF}
+    \item \textbf{Getting Started with Artificial Intelligence} --- IBM SkillsBuild\\
+    Certificate: \href{https://github.com/Ron41202/certifications/blob/995d03deba715d88af29c97352229ceed320ee50/certificates/IBMDesign20250803-29-s06v8q.pdf}{View PDF}
+  \end{itemize}
 
-\begin{quote}
-\textbf{EDUCATION}
-
-August 2020 -- August 2024\\
-Bachelor Of TechnologyComputer Science Engineering \textbar{} Graphic
-Era Hill University \textbar{} 7.87/10 CGPA
-
-March 2019 -- March 2020\\
-Intermediate / 12th \textbar{} Kendriya Vidyalaya IMA, Dehradun
-\textbar{} 93\%
-
-March 2017 -- March 2018\\
-High School / 10th \textbar{} Kendriya Vidyalaya IMA, Dehradun
-\textbar{} 88\%
-
-\textbf{SKILLS}
-\end{quote}
-
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
-\toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-\begin{quote}
-C
-\end{quote}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-C++
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Python
-\end{minipage} \\
-\midrule()
-\endhead
-\begin{minipage}[t]{\linewidth}\raggedright
-\begin{quote}
-Solidity
-\end{quote}
-\end{minipage} & SQL & HTML \\
-\begin{minipage}[t]{\linewidth}\raggedright
-\begin{quote}
-CSS
-\end{quote}
-\end{minipage} & Javascript & Cloud \\
-\bottomrule()
-\end{longtable}
-
+%-------------------------------------------
 \end{document}
